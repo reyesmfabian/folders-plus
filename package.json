@@ -1,0 +1,53 @@
+{
+  "name": "folders-plus",
+  "displayName": "Folders Plus",
+  "description": "FolderPlus is a Visual Studio Code extension designed to enhance your file management experience within the VS Code environment. This extension introduces a convenient and efficient way to create predefined folder structures directly from the Explorer context menu. It's particularly useful for developers who often find themselves setting up similar directory structures for new projects or modules.",
+  "icon": "images/icon.png",
+  "version": "1.0.0",
+  "repository": "https://github.com/reyesmfabian/folders-plus",
+  "publisher": "FabianReyes",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "extension.createSpecificFolder",
+          "group": "foldersPlus@1"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "extension.createSpecificFolder",
+        "title": "Create clean feature"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
