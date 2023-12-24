@@ -3,7 +3,7 @@
   "displayName": "Folders Plus",
   "description": "FolderPlus is a Visual Studio Code extension designed to enhance your file management experience within the VS Code environment. This extension introduces a convenient and efficient way to create predefined folder structures directly from the Explorer context menu. It's particularly useful for developers who often find themselves setting up similar directory structures for new projects or modules.",
   "icon": "images/icon.png",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": "https://github.com/reyesmfabian/folders-plus",
   "publisher": "FabianReyes",
   "engines": {
@@ -29,7 +29,48 @@
         "command": "extension.createSpecificFolder",
         "title": "Create clean feature"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Folders Plus",
+      "properties": {
+        "foldersPlus.flutterFolders": {
+          "type": "array",
+          "default": [
+            "app/ui/pages",
+            "app/ui/widgets",
+            "domain/gateways",
+            "domain/models",
+            "domain/use_cases",
+            "infrastructure/driven_adapters"
+          ],
+          "markdownDescription": "The default folder structure for Flutter/Dart projects."
+        },
+        "foldersPlus.typescriptFolders": {
+          "type": "array",
+          "default": [
+            "app/ui/views",
+            "app/ui/components",
+            "domain/gateways",
+            "domain/models",
+            "domain/use_cases",
+            "infrastructure/driven_adapters"
+          ],
+          "markdownDescription": "The default folder structure for TypeScript projects."
+        },
+        "foldersPlus.nodeFolders": {
+          "type": "array",
+          "default": [
+            "controllers/validations",
+            "domain/gateways",
+            "domain/models",
+            "domain/use_cases",
+            "infrastructure/driven_adapters"
+          ],
+          "markdownDescription": "The default folder structure for node projects."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
